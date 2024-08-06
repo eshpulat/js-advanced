@@ -76,21 +76,25 @@ console.log(filterOddNumbers(numbers4, filterPerfectSquares));
 // ------- 1 ------- Palindrome Strings
 
 function filterPalindromes(str) {
-    let newStr = str.join(",");
-    let result2 = "";
+    let reverseStr = str.toReversed().join();
+    let result = "";
     let arr = [];
 
-    for (let i = newStr.length - 1; i >= 0; i--) {
-        result2 += newStr[i];
+    for (let i = reverseStr.length - 1; i >= 0; i--) {
+        result += reverseStr[i];
     }
 
-    let result1 = "";
-    for (let i = 0; i < str.length; i++) {
-        result1 += str[i] + ",";
-        if ((result1 = result2)) {
-            return str[i];
+    let reverseArray = result.split(",");
+
+    for (let k = 0; k < reverseArray.length; k++) {
+        for (let j = 0; j < str.length; j++) {
+            if (reverseArray[k] === str[j]) {
+                arr.push(str[j]);
+            }
         }
     }
+
+    return arr;
 }
 
 // const str1 = ["racecar", "madam", "apple"];
