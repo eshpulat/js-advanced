@@ -1,14 +1,14 @@
-// let orginalArray = [1, 2, 3];
-// let orginalObjet = { key: "value" };
+let orginalArray = [1, 2, 3];
+let orginalObjet = { key: "value" };
 
-// let newArray = orginalArray;
-// let newObject = orginalObjet;
+let newArray = orginalArray;
+let newObject = orginalObjet;
 
-// newArray.push(4);
-// newObject.newKey = "newValue";
+newArray.push(4);
+newObject.newKey = "newValue";
 
-// console.log("orginalArray:", newArray);
-// console.log("orginalObject:", newObject);
+console.log("orginalArray:", newArray);
+console.log("orginalObject:", newObject);
 
 // shallow copy
 
