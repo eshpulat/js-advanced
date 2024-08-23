@@ -85,3 +85,87 @@ let strWords2 = "Hello";
 
 console.log(strWords1.isPalindrome());
 console.log(strWords2.isPalindrome());
+
+console.log("---------------------------------");
+
+// Number.prototype
+
+// ----------- 1 ------------ isPrime()
+
+Number.prototype.isPrime = function () {
+    if (this % 2 === 0 || this % 3 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+let num1 = 7;
+let num2 = 4;
+
+console.log(num1.isPrime());
+console.log(num2.isPrime());
+
+// ----------- 2 ------------ toFactorial()
+
+Number.prototype.toFactorial = function () {
+    let result = 1;
+
+    for (let i = 1; i <= this; i++) {
+        result *= i;
+    }
+    return result;
+};
+
+let factoralNum1 = 5;
+let factoralNum2 = 3;
+
+console.log(factoralNum1.toFactorial());
+console.log(factoralNum2.toFactorial());
+
+// ----------- 3 ------------ findFactors()
+Number.prototype.findFactors = function () {
+    let arr = [];
+    for (let i = 0; i <= this; i++) {
+        if (this % i === 0) {
+            arr.push(i);
+        }
+    }
+    return arr;
+};
+
+let factorNum1 = 10;
+let factorNum2 = 16;
+
+console.log(factorNum1.findFactors());
+console.log(factorNum2.findFactors());
+
+// ----------- 4 ------------ isPerfectSquare() ??????????????????????
+
+// Number.prototype.isPerfectSquare = function () {
+//     for (let i = 1; i <= this; i++) {
+//         if (i * i === this) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+// };
+
+// let squareNum1 = 9;
+// let squareNum2 = 8;
+
+// console.log(squareNum1.isPerfectSquare());
+// console.log(squareNum2.isPerfectSquare());
+
+// ----------- 5 ------------ isOdd()
+
+Number.prototype.isOdd = function () {
+    return this % 2 !== 0;
+};
+
+let oddNum1 = 5;
+let oddNum2 = 6;
+
+console.log(oddNum1.isOdd());
+console.log(oddNum2.isOdd());
