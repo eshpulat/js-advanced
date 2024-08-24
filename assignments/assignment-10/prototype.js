@@ -169,3 +169,78 @@ let oddNum2 = 6;
 
 console.log(oddNum1.isOdd());
 console.log(oddNum2.isOdd());
+
+console.log("-------------------------------------");
+// Array.prototype
+
+// --------------- 1 ------------- findMax()
+
+Array.prototype.findMax = function () {
+    let max = this[0];
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] > max) {
+            max = this[i];
+        }
+    }
+    return max;
+};
+
+let arrNum1 = [1, 2, 3];
+let arrNum2 = [-1, -2, -3];
+
+console.log(arrNum1.findMax());
+console.log(arrNum2.findMax());
+
+// ----------- 2 ------------- findMin()
+
+Array.prototype.findMin = function () {
+    let min = 10;
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] < min) {
+            min = this[i];
+        }
+    }
+    return min;
+};
+
+console.log(arrNum1.findMin());
+console.log(arrNum2.findMin());
+
+// ------------- 3 ------------- average()
+
+Array.prototype.average = function () {
+    let max = this[0];
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] > max) {
+            max = this[i];
+        }
+    }
+
+    let min = this[0];
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] < min) {
+            min = this[i];
+        }
+    }
+    return (max + min) / 2;
+};
+
+let averNum1 = [1, 2, 3, 4];
+let averNum2 = [5, 10, 15, 20];
+
+console.log(averNum1.average());
+console.log(averNum2.average());
+
+// ------------ 4 ---------- removeDuplicates()
+
+Array.prototype.removeDuplicates = function () {};
+
+let num = [1, 2, 2, 3];
+let str = ["a", "b", "b", "c"];
+
+console.log(num.removeDuplicates());
+console.log(str.removeDuplicates());
