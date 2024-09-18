@@ -75,18 +75,45 @@ function leastCommonMultiple(num1, num2) {
 // console.log(leastCommonMultiple(6, 10)); // 30
 // console.log(leastCommonMultiple(24, 26)); // 312
 
-// generatePrimes ----------- 6 -----------
+// generatePrimes ----------- 6 ----------- ????
 
 function generatePrimes(n) {
     let result = [2, 3];
 
-    for (let i = 4; i < n; i++) {
-        if (n % 2 !== 0 || n % 3 !== 0) {
-            result.push(n);
+    for (let i = 4; i < 100; i++) {
+        if (i % 2 !== 0 && i % 3 !== 0) {
+            result.push(i);
+        }
+        if (result.length < n) {
+            result = result.length = n;
         }
     }
+
     return result;
 }
 
-console.log(generatePrimes(3)); // [2, 3, 5]
-console.log(generatePrimes(5)); // [2, 3, 5, 7, 11]
+// console.log(generatePrimes(3)); // [2, 3, 5]
+// console.log(generatePrimes(5)); // [2, 3, 5, 7, 11]
+
+// canFormTarget ------------ 7 --------
+
+function canFormTarget(str1, str2, target) {
+    let countChar = str1 + str2;
+
+    for (let i = 0; i < countChar.length; i++) {
+        for (let j = 0; j < target.length; j++) {
+            if (target[j].includes(countChar[i])) {
+                console.log(target[j]);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        // console.log(countChar[i]);
+    }
+}
+
+console.log(canFormTarget("ab", "cd", "abcd")); // true
+console.log(canFormTarget("cat", "dog", "actdog")); // true
+console.log(canFormTarget("a", "b", "aa")); // false
+console.log(canFormTarget("a", "b", "abx")); // false
